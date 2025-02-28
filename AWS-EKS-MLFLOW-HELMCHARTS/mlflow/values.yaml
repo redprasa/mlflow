@@ -1,0 +1,25 @@
+image:
+  repository: <aws_account_id>.dkr.ecr.<region>.amazonaws.com/mlflow
+  tag: 1.0.0
+  pullPolicy: IfNotPresent
+
+serviceAccount:
+  create: true
+  name: ""
+
+service:
+  type: LoadBalancer
+  port: 5000
+
+resources:
+  requests:
+    memory: "512Mi"
+    cpu: "250m"
+  limits:
+    memory: "1Gi"
+    cpu: "500m"
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
